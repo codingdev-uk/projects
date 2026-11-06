@@ -1,3 +1,23 @@
 body { 
-background-color: rgb (80, 100, 155); 
+  background-color: rgb (80, 100, 155); 
+}
+
+.slider-container {
+  position: relative;
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.slider-container img {
+  width: 100%;
+  display: block;
+  height: auto;
+}
+
+.slider-container img:nth-child(2) {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
 }
