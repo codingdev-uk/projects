@@ -21,3 +21,10 @@ body {
   left: 0;
   width: 100%;
 }
+
+.slider-container input [type = "range"] {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  z-index: 10;
+}
