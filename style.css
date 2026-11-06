@@ -25,6 +25,11 @@ body {
   pointer-events: none;
 }
 
+.image-wrapper img {
+  max-width: 800px;
+  width: 100%;
+}
+
 .slider-container input [type = "range"] {
   position: absolute;
   bottom: 20px;
