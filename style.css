@@ -22,7 +22,6 @@ body {
   width: 50%;
   height: 100%;
   overflow: hidden;
-  pointer-events: none;
 }
 
 .image-wrapper img {
