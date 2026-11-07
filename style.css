@@ -3,6 +3,28 @@ body {
   font-family: 'Gill Sans', sans-serif;
 }
 
+.image-slider {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  width: auto;
+}
+
+.previous-button {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+}
+
+.next-button {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+}
+  
 .letter-animation {
   display: inline-block;
   animation: jump 0.6s infinite alternate;
