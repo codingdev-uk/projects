@@ -24,6 +24,15 @@ body {
   right: 10px;
   transform: translateY(-50%);
 }
+
+.slide {
+  display: none;
+  text-align: center;
+}
+
+.slide.active {
+  display: block;
+}
   
 .letter-animation {
   display: inline-block;
