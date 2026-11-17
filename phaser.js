@@ -19,7 +19,7 @@ const config = {
 const game = new Phaser.Game(config);
 
 function preload() {
-  this.load.image('flag', 'https://upload.wikimedia.org/wikipedia/commons/1/11/Flag_of_Lithuania.svg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original');
+  this.load.image('square', 'https://upload.wikimedia.org/wikipedia/commons/1/11/Flag_of_Lithuania.svg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original');
 }
 
 function create() {
