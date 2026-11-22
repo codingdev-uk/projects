@@ -1,3 +1,6 @@
+pip install openmeteo-requests
+pip requests-cache retry-requests numpy pandas
+
 import openmeteo_requests
 
 import pandas as pd
