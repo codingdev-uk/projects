@@ -9,39 +9,74 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  background-color: #0d1117; /* GitHub dark theme background */
-  color: #58a6ff;
+  background-color: #0d1117;
+  color: #f0f6fc;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, monospace;
 }
 
 .clock-card {
+  width: 320px;
   text-align: center;
-  padding: 2.5rem 3.5rem;
+  padding: 1.5rem 1.75rem;
   background-color: #161b22;
   border: 1px solid #30363d;
-  border-radius: 16px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
 }
 
-.date {
-  font-size: 1.2rem;
+.header-row {
+  margin-bottom: 1rem;
+}
+
+.tz-select {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #c9d1d9;
+  background-color: #21262d;
+  border: 1px solid #30363d;
+  border-radius: 6px;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.tz-select:hover,
+.tz-select:focus {
+  border-color: #58a6ff;
+}
+
+.tz-select optgroup {
+  background-color: #161b22;
   color: #8b949e;
-  margin-bottom: 0.75rem;
-  letter-spacing: 1px;
+  font-weight: 600;
 }
 
-.time {
-  font-size: 5rem;
-  font-weight: 700;
-  font-variant-numeric: tabular-nums; /* Prevents digits from jittering as they change */
-  letter-spacing: 3px;
+.tz-select option {
+  background-color: #21262d;
   color: #f0f6fc;
 }
 
-.timezone {
-  margin-top: 0.75rem;
-  font-size: 0.9rem;
-  color: #3fb950;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
+.time {
+  font-size: 3rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 2px;
+  color: #58a6ff;
+  line-height: 1.1;
+}
+
+.date {
+  margin-top: 0.6rem;
+  font-size: 0.85rem;
+  color: #8b949e;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
 }
