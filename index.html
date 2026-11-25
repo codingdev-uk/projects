@@ -3,15 +3,72 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Real-Time Digital Clock</title>
+  <title>World Digital Clock</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
   <main class="clock-card">
-    <div id="date" class="date">Loading date...</div>
+    <div class="header-row">
+      <label for="timezone-select" class="sr-only">Select City</label>
+      <select id="timezone-select" class="tz-select">
+        <option value="local">Local Time</option>
+
+        <optgroup label="Europe">
+          <option value="Europe/London">London, UK</option>
+          <option value="Europe/Dublin">Dublin, Ireland</option>
+          <option value="Europe/Paris">Paris, France</option>
+          <option value="Europe/Berlin">Berlin, Germany</option>
+          <option value="Europe/Madrid">Madrid, Spain</option>
+          <option value="Europe/Rome">Rome, Italy</option>
+          <option value="Europe/Amsterdam">Amsterdam, Netherlands</option>
+          <option value="Europe/Zurich">Zurich, Switzerland</option>
+          <option value="Europe/Stockholm">Stockholm, Sweden</option>
+          <option value="Europe/Athens">Athens, Greece</option>
+          <option value="Europe/Istanbul">Istanbul, Turkey</option>
+        </optgroup>
+
+        <optgroup label="North America and South America">
+          <option value="America/New_York">New York, USA</option>
+          <option value="America/Chicago">Chicago, USA</option>
+          <option value="America/Denver">Denver, USA</option>
+          <option value="America/Los_Angeles">Los Angeles, USA</option>
+          <option value="America/Toronto">Toronto, Canada</option>
+          <option value="America/Vancouver">Vancouver, Canada</option>
+          <option value="America/Mexico_City">Mexico City, Mexico</option>
+          <option value="America/Sao_Paulo">São Paulo, Brazil</option>
+          <option value="America/Argentina/Buenos_Aires">Buenos Aires, Argentina</option>
+        </optgroup>
+
+        <optgroup label="Asia & Middle East">
+          <option value="Asia/Dubai">Dubai, UAE</option>
+          <option value="Asia/Riyadh">Riyadh, Saudi Arabia</option>
+          <option value="Asia/Kolkata">Mumbai / New Delhi, India</option>
+          <option value="Asia/Bangkok">Bangkok, Thailand</option>
+          <option value="Asia/Singapore">Singapore</option>
+          <option value="Asia/Hong_Kong">Hong Kong</option>
+          <option value="Asia/Shanghai">Shanghai / Beijing, China</option>
+          <option value="Asia/Seoul">Seoul, South Korea</option>
+          <option value="Asia/Tokyo">Tokyo, Japan</option>
+        </optgroup>
+
+        <optgroup label="Oceania & Africa">
+          <option value="Australia/Perth">Perth, Australia</option>
+          <option value="Australia/Sydney">Sydney, Australia</option>
+          <option value="Pacific/Auckland">Auckland, New Zealand</option>
+          <option value="Africa/Cairo">Cairo, Egypt</option>
+          <option value="Africa/Lagos">Lagos, Nigeria</option>
+          <option value="Africa/Johannesburg">Johannesburg, South Africa</option>
+        </optgroup>
+
+        <optgroup label="Standard">
+          <option value="UTC">UTC (Coordinated Universal Time)</option>
+        </optgroup>
+      </select>
+    </div>
+
     <div id="clock" class="time">00:00:00</div>
-    <div id="timezone" class="timezone">UTC</div>
+    <div id="date" class="date">Loading date...</div>
   </main>
 
   <script src="script.js"></script>
