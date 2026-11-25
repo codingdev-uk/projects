@@ -1,33 +1,45 @@
 const clockEl = document.getElementById('clock');
 const dateEl = document.getElementById('date');
-const timezoneEl = document.getElementById('timezone');
+const tzSelect = document.getElementById('timezone-select');
 
-// Detect user's local timezone once on load
-const userTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
-timezoneEl.textContent = userTimezone;
+// Automatically label the first option with the user's detected local city
+const localTimezone = Intl.DateTimeFormat().resolvedOptions().timeZone;
+const localCity = localTimezone.split('/').pop().replace(/_/g, ' ');
+tzSelect.options[0].textContent = `Local (${localCity})`;
 
-function updateRealTimeClock() {
+let activeTimezone = localTimezone;
+let timerId = null;
+
+function updateClock() {
   const now = new Date();
 
-  // Format hours, minutes, and seconds
-  const hours = String(now.getHours()).padStart(2, '0');
-  const minutes = String(now.getMinutes()).padStart(2, '0');
-  const seconds = String(now.getSeconds()).padStart(2, '0');
-  clockEl.textContent = `${hours}:${minutes}:${seconds}`;
+  const timeFormatter = new Intl.DateTimeFormat('en-GB', {
+    timeZone: activeTimezone,
+    hour: '2-digit',
+    minute: '2-digit',
+    second: '2-digit',
+    hour12: false
+  });
+  clockEl.textContent = timeFormatter.format(now);
 
-  // Format current day and date
-  const dateOptions = { 
-    weekday: 'long', 
-    year: 'numeric', 
-    month: 'long', 
-    day: 'numeric' 
-  };
-  dateEl.textContent = now.toLocaleDateString(undefined, dateOptions);
+  const dateFormatter = new Intl.DateTimeFormat('en-GB', {
+    timeZone: activeTimezone,
+    weekday: 'short',
+    day: 'numeric',
+    month: 'short',
+    year: 'numeric'
+  });
+  dateEl.textContent = dateFormatter.format(now);
 
-  // Sync the next update to the exact start of the next second
-  const delayUntilNextSecond = 1000 - now.getMilliseconds();
-  setTimeout(updateRealTimeClock, delayUntilNextSecond);
+  // Sync tightly with the next real-world second
+  const delay = 1000 - now.getMilliseconds();
+  timerId = setTimeout(updateClock, delay);
 }
 
-// Start the clock
-updateRealTimeClock();
+tzSelect.addEventListener('change', (e) => {
+  activeTimezone = e.target.value === 'local' ? localTimezone : e.target.value;
+  clearTimeout(timerId);
+  updateClock();
+});
+
+updateClock();
