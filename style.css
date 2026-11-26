@@ -15,9 +15,9 @@ body {
 }
 
 .clock-card {
-  width: 320px;
+  width: 300px;
   text-align: center;
-  padding: 1.5rem 1.75rem;
+  padding: 1.35rem 1.5rem;
   background-color: #161b22;
   border: 1px solid #30363d;
   border-radius: 12px;
@@ -25,13 +25,16 @@ body {
 }
 
 .header-row {
-  margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0.85rem;
 }
 
 .tz-select {
-  width: 100%;
-  padding: 0.5rem 0.75rem;
-  font-size: 0.85rem;
+  width: auto;
+  max-width: 210px;
+  padding: 0.25rem 0.55rem;
+  font-size: 0.75rem;
   font-weight: 500;
   color: #c9d1d9;
   background-color: #21262d;
@@ -39,6 +42,7 @@ body {
   border-radius: 6px;
   cursor: pointer;
   outline: none;
+  text-overflow: ellipsis;
   transition: border-color 0.2s;
 }
 
@@ -50,16 +54,18 @@ body {
 .tz-select optgroup {
   background-color: #161b22;
   color: #8b949e;
+  font-size: 0.75rem;
   font-weight: 600;
 }
 
 .tz-select option {
   background-color: #21262d;
   color: #f0f6fc;
+  font-size: 0.75rem;
 }
 
 .time {
-  font-size: 3rem;
+  font-size: 2.85rem;
   font-weight: 700;
   font-variant-numeric: tabular-nums;
   letter-spacing: 2px;
@@ -68,8 +74,8 @@ body {
 }
 
 .date {
-  margin-top: 0.6rem;
-  font-size: 0.85rem;
+  margin-top: 0.55rem;
+  font-size: 0.8rem;
   color: #8b949e;
 }
 
